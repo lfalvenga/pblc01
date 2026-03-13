@@ -16,16 +16,57 @@ for(i = 0; i<3; i++){
 }
 
 while ((jogadas < 9) && (fimJogo ==false)){
-    // (b)
+    
+    for(i = 0; i<1; i++){
+        lin = parseInt(prompt(`${jogador1} em [linha]: `));
+        col = parseInt(prompt(`${jogador1} em [coluna]: `));
 
-    lin = parseInt(prompt(`${jogador1} em [linha]: `));
-    col = parseInt(prompt(`${jogador1} em [coluna]: `));
+        if(lin < 0 || lin > 2 || col < 0 || col > 2){
+            console.log("Linha ou coluna escolhida não existe, tente novamente.");
+            i--;
+        } else {
+            if(tab[lin][col] != ' '){
+                console.log("Linha e coluna escolhida já foram preenchidas, tente novamente.");
+                i--;
+            } else{
+            tab[lin][col] = 'x';
+            }
+        }
+    }
 
-    lin = parseInt(prompt(`${jogador2} em [linha]: `));
-    col = parseInt(prompt(`${jogador2} em [coluna]: `));
+    for(i = 0; i < 3; i++){
+    for(j = 0; j < 3; j++){
+        process.stdout.write(`[${tab[i][j]}]`);
+    }
+    console.log();
+    }
+
+    for(i = 0; i<1; i++){
+        lin = parseInt(prompt(`${jogador2} em [linha]: `));
+        col = parseInt(prompt(`${jogador2} em [coluna]: `));
+
+        if(lin < 0 || lin > 2 || col < 0 || col > 2){
+            console.log("Linha ou coluna escolhida não existe, tente novamente.");
+            i--;
+        } else {
+            if(tab[lin][col] != ' '){
+                console.log("Linha e coluna escolhida já foram preenchidas, tente novamente.");
+                i--;
+            } else{
+            tab[lin][col] = 'o';
+            }
+        }
+    }
+
+    for(i = 0; i < 3; i++){
+    for(j = 0; j < 3; j++){
+        process.stdout.write(`[${tab[i][j]}]`);
+    }
+    console.log();
+    }
 
     jogadas++;
-    // (c)
+
 }
 
 // (d)
