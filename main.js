@@ -8,7 +8,12 @@ var vencedor = ' ';
 var fimJogo = false;
 var tab = [3];
 
-// (a)
+for(i = 0; i<3; i++){
+    tab[i] = [3];
+    for(j = 0; j<3;j++){
+        tab[i][j] = ' ';
+    }
+}
 
 while ((jogadas < 9) && (fimJogo ==false)){
     // (b)
