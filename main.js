@@ -34,6 +34,21 @@ while ((jogadas < 9) && (fimJogo ==false)){
         }
     }
 
+    if( (tab[0][0] == 'x' && tab[0][1] == 'x' && tab[0][2] == 'x') ||
+        (tab[1][0] == 'x' && tab[1][1] == 'x' && tab[1][2] == 'x') ||
+        (tab[2][0] == 'x' && tab[2][1] == 'x' && tab[2][2] == 'x') ||
+
+        (tab[0][0] == 'x' && tab[1][0] == 'x' && tab[2][0] == 'x') ||
+        (tab[0][1] == 'x' && tab[1][1] == 'x' && tab[2][1] == 'x') ||
+        (tab[0][2] == 'x' && tab[1][2] == 'x' && tab[2][2] == 'x') ||
+
+        (tab[0][0] == 'x' && tab[1][1] == 'x' && tab[2][2] == 'x') ||
+        (tab[2][0] == 'x' && tab[1][1] == 'x' && tab[0][2] == 'x')
+    ) {
+        vencedor = 'x';
+        fimJogo = true;
+    }
+
     for(i = 0; i < 3; i++){
     for(j = 0; j < 3; j++){
         process.stdout.write(`[${tab[i][j]}]`);
